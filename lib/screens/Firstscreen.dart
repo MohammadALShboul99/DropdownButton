@@ -13,6 +13,7 @@ class _My_first_ScreenState extends State<My_first_Screen> {
   String selecteditem = "Dell";
   bool myvalue = false;
   bool myval = false;
+  String groubby = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +67,30 @@ class _My_first_ScreenState extends State<My_first_Screen> {
                   onChanged: (val) {
                     setState(() {
                       myval = val!;
+                    });
+                  },
+                ),
+                Text(
+                  "Select The Color",
+                  style: TextStyle(fontStyle: FontStyle.italic, fontSize: 30),
+                ),
+                RadioListTile(
+                  title: Text("Color White"),
+                  value: "Laptop",
+                  groupValue: groubby,
+                  onChanged: (val) {
+                    setState(() {
+                      groubby = val.toString();
+                    });
+                  },
+                ),
+                RadioListTile(
+                  title: Text("Color Black"),
+                  value: "Lap",
+                  groupValue: groubby,
+                  onChanged: (val) {
+                    setState(() {
+                      groubby = val.toString();
                     });
                   },
                 ),
